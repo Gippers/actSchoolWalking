@@ -5,12 +5,143 @@ title: "Average Walk Time Analysis"
 Analysis of walking times to nearest schools across the ACT.
 
 ```{r setup}
-#| include: false
+#| echo: false
+#| message: false
+#| warning: false
 library(sf)
 library(leaflet)
 library(dplyr)
 library(ggplot2)
+library(plotly)
+library(htmltools)
 
-# Load your walk time data
-# walk_times <- st_read("../data/walk_analysis/school_walk_times_2024.gpkg")
+# Load walk time data
+walk_2001 <- st_read(here::here("data", "walk_analysis", "school_walk_times_2001.gpkg"), quiet = TRUE)
+walk_2024 <- st_read(here::here("data", "walk_analysis", "school_walk_times_2024.gpkg"), quiet = TRUE)
+primary_2001 <- walk_2001 |> filter(school_type == "primary")
+primary_2024 <- walk_2024 |> filter(school_type == "primary")
+high_2001 <- walk_2001 |> filter(school_type == "high")
+high_2024 <- walk_2024 |> filter(school_type == "high")
+
 ```
+
+## Overall Walk Times
+
+```{r}
+#| echo: false
+
+# Create KPI callout function
+create_kpi_callout <- function(title, value, subtitle, color = "#2166AC") {
+  div(
+    style = paste0("background-color: ", color, "; color: white; padding: 20px; 
+                   border-radius: 8px; text-align: center; margin: 10px;"),
+    h3(title, style = "margin: 0; font-size: 1.2em;"),
+    h1(paste0(value, " mins"), style = "margin: 5px 0; font-size: 2.5em; font-weight: bold;"),
+    p(subtitle, style = "margin: 0; font-size: 0.9em; opacity: 0.9;")
+  )
+}
+
+# Get specific stats for KPIs
+primary_2001_avg <- round(sum(primary_2001$mean_walk_time_min *  
+        primary_2001$population) / sum(primary_2001$population), digits = 1)
+primary_2024_avg <- round(sum(primary_2024$mean_walk_time_min *  
+        primary_2024$population) / sum(primary_2024$population), digits = 1)
+high_2001_avg <- round(sum(high_2001$mean_walk_time_min *  
+        high_2001$population) / sum(high_2001$population), digits = 1)
+high_2024_avg <- round(sum(high_2024$mean_walk_time_min *  
+        high_2024$population) / sum(high_2024$population), digits = 1)
+```
+
+# Primary Schools
+
+## Walk Time KPIs
+
+::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+
+# Create 2001 Primary KPI
+create_kpi_callout(
+  title = "Primary Schools 2001", 
+  value = primary_2001_avg,
+  subtitle = "Population-weighted average walk time",
+  color = "#1e3a8a"
+)
+
+```
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+
+# Calculate change for color coding
+primary_change <- primary_2024_avg - primary_2001_avg
+change_color <- if(primary_change > 0) "#dc2626" else "#16a34a"  # Red if worse, green if better
+
+# Create 2024 Primary KPI with change info
+create_kpi_callout(
+  title = "Primary Schools 2024", 
+  value = primary_2024_avg,
+  subtitle = paste0("Change: ", ifelse(primary_change >= 0, "+", ""), round(primary_change, 1), " mins vs 2001"),
+  color = change_color
+)
+
+```
+
+:::
+
+:::
+
+## Primary School Walk Time Maps
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+### 2024
+```{r}
+create_walk_time_map <- function(data, year, school_type) {
+  # Calculate color palette - using plasma reversed so shorter times are yellow/bright
+  pal <- colorNumeric("plasma", data$mean_walk_time_min, na.color = "#cccccc", reverse = TRUE)
+  
+  leaflet(data) |>
+    addProviderTiles(providers$CartoDB.Positron) |>
+    addPolygons(
+      fillColor = ~pal(mean_walk_time_min),
+      fillOpacity = ~ifelse(population == 0, 0, 0.7),  # Transparent if no population
+      color = "#444444",
+      weight = 1,
+      label = ~paste0(
+        sa2_name, "<br>",
+        "Walk Time: ", round(mean_walk_time_min, 1), " mins<br>",
+        "Population (5-14): ", population, "<br>",
+        "Year: ", year
+      ) |> lapply(htmltools::HTML),
+      labelOptions = labelOptions(sticky = TRUE)
+    ) |>
+    addLegend(
+      pal = pal, 
+      values = ~mean_walk_time_min,
+      title = paste("Walk Time (mins)\n", school_type, year),
+      position = "bottomright"
+    ) |>
+    setView(lng = 149.12, lat = -35.30, zoom = 10)
+}
+create_walk_time_map(primary_2024, 2024, "Primary")
+
+```
+
+### 2001
+```{r}
+#| echo: false
+
+create_walk_time_map(primary_2001, 2001, "Primary")
+```
+
+
+
+
