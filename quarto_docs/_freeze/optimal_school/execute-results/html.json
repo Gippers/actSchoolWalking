@@ -1,0 +1,15 @@
+{
+  "hash": "df5b25833d6e91094825d16840403498",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n---\ntitle: \"Optimal New School Location\"\n---\n\nAnalysis of where new schools should be built to minimize walking distances.\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
