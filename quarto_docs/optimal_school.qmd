@@ -36,14 +36,72 @@ create_kpi_callout <- function(title, value, subtitle, color = "#2166AC") {
 }
 
 # Create a focused map showing the proposed school location
+c# Create a focused map showing the proposed school location with SA2 background
 create_school_location_map <- function(optimal_data, school_type, rank = 1) {
   # Get the optimal location
-  test_school <- optimal_data[rank,]
-     leaflet(test_school) |>
+  new_school <- optimal_data[rank,]
+  
+  # Get the corresponding walk time data
+  walk_data <- if(school_type == "Primary") primary_2024 else high_2024
+  
+  # Calculate color palette - using plasma reversed so shorter times are yellow/bright
+  pal <- colorNumeric("plasma", walk_data$mean_walk_time_min, na.color = "#cccccc", reverse = TRUE)
+  
+  leaflet() |>
     addProviderTiles(providers$CartoDB.Positron) |>
-       addMarkers(lng = ~longitude, lat = ~latitude) |>
-       setView(lng = test_school$longitude, lat = test_school$latitude, zoom = 12)
-
+    # Add SA2 polygons showing walk times (50% opacity)
+    addPolygons(
+      data = walk_data,
+      fillColor = ~pal(mean_walk_time_min),
+      fillOpacity = ~ifelse(population == 0, 0, 0.5),  # 50% opacity, transparent if no population
+      color = "#444444",
+      weight = 1,
+      label = ~paste0(
+        sa2_name, "<br>",
+        "Walk Time: ", round(mean_walk_time_min, 1), " mins<br>",
+        "Population (5-14): ", population
+      ) |> lapply(htmltools::HTML),
+      labelOptions = labelOptions(sticky = TRUE),
+      group = "SA2 Walk Times"
+    ) |>
+    # Add the proposed new school marker on top
+    addMarkers(
+      data = new_school,
+      lng = ~longitude,
+      lat = ~latitude,
+      popup = ~paste0(
+        "<strong>Proposed ", school_type, " School (Rank ", rank, ")</strong><br>",
+        "Location: ", round(longitude, 4), ", ", round(latitude, 4), "<br>",
+        "Time Reduction: ", round(time_reduction_min, 2), " minutes<br>",
+        "Current Average: ", round(current_avg_walk_time_min, 1), " mins<br>",
+        "New Average: ", round(new_avg_walk_time_min, 1), " mins"
+      ),
+      icon = makeIcon(
+        iconUrl = "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
+        shadowUrl = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+        iconWidth = 30, iconHeight = 49,
+        iconAnchorX = 15, iconAnchorY = 49,
+        shadowWidth = 51, shadowHeight = 51
+      ),
+      group = "New School"
+    ) |>
+    # Add legend for walk times
+    addLegend(
+      pal = pal,
+      values = walk_data$mean_walk_time_min,
+      title = paste("Walk Time (mins)<br>", school_type, "Schools"),
+      position = "bottomright"
+    ) |>
+    # Add layer control
+    addLayersControl(
+      overlayGroups = c("SA2 Walk Times", "New School"),
+      options = layersControlOptions(collapsed = FALSE)
+    ) |>
+    setView(
+      lng = new_school$longitude, 
+      lat = new_school$latitude, 
+      zoom = 11  # Zoomed out slightly to show more context
+    )
 }
 ```
 
