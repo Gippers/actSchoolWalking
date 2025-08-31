@@ -1,0 +1,30 @@
+# R session files
+.Rhistory
+.RData
+.Ruserdata
+
+# RStudio / Positron project files
+.Rproj.user/
+*.Rproj
+
+# Temporary files
+.Rapp.history
+*.Rout
+*.Rout.save
+*.Rout.fail
+
+# Package build/check output
+*.tar.gz
+*.Rcheck/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Large datasets
+ERP_2001_2021.csv
+# Ignore all large datasets stored in the folder
+data_large/
+# Ignore walk maps
+data/act_walking_network*data/act_walking_network*.rds
+data/erp_sa2.gpkg
