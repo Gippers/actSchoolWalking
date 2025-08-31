@@ -11,7 +11,7 @@ library(leaflet)
 library(dplyr)
 library(crosstalk)
 
-erp <- st_read("data/erp_sa2.gpkg")
+erp <- st_read(paste0(here::here(), "/data/erp_sa2.gpkg"))
 
 # TODO change later: For now only analyis 10-14 age group
 # TODO change to 5-14 age group, aggregate
