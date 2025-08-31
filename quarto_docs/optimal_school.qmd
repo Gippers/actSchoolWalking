@@ -1,4 +1,3 @@
-
 ---
 title: "Optimal New School Locations in 2024"
 ---
@@ -6,24 +5,22 @@ title: "Optimal New School Locations in 2024"
 Analysis of where new schools should be built to minimize walking distances.
 
 ```{r setup}
-#| include: false
+#| echo: false
+#| message: false
+#| warning: false
 library(sf)
 library(leaflet)
 library(dplyr)
 library(htmltools)
 
 # Load optimal location data
-optimal_primary <- st_read(paste0(here::here(),"/data/new_schools/optimal_primary_location_2024.gpkg"),
-    quiet = T)
-optimal_high <- st_read(paste0(here::here(),"/data/new_schools/optimal_high_location_2024.gpkg"),
-    quiet = T)
+optimal_primary <- st_read(paste0(here::here(),"/data/new_schools/optimal_primary_location_2024.gpkg"), quiet = T)
+optimal_high <- st_read(paste0(here::here(),"/data/new_schools/optimal_high_location_2024.gpkg"), quiet = T)
 
 # Load 2024 walk time data for comparison
 walk_2024 <- st_read(here::here("data", "walk_analysis", "school_walk_times_2024.gpkg"), quiet = TRUE)
-primary_2024 <- walk_2024 |> 
-    filter(school_type == "primary")
-high_2024 <- walk_2024 |> 
-    filter(school_type == "high")
+primary_2024 <- walk_2024 |> filter(school_type == "primary")
+high_2024 <- walk_2024 |> filter(school_type == "high")
 
 # Create KPI callout function
 create_kpi_callout <- function(title, value, subtitle, color = "#2166AC") {
@@ -37,52 +34,26 @@ create_kpi_callout <- function(title, value, subtitle, color = "#2166AC") {
       style = "margin: 0; font-size: 1.1em; opacity: 0.9;")
   )
 }
+
+# Create a focused map showing the proposed school location
+create_school_location_map <- function(optimal_data, school_type, rank = 1) {
+  # Get the optimal location
+  test_school <- optimal_data[rank,]
+     leaflet(test_school) |>
+    addProviderTiles(providers$CartoDB.Positron) |>
+       addMarkers(lng = ~longitude, lat = ~latitude) |>
+       setView(lng = test_school$longitude, lat = test_school$latitude, zoom = 12)
+
+}
 ```
 
-# Primary School
+# New Primary School Location
 ::: {.columns}
 
 ::: {.column width="60%"}
 
-New Primary School Location
 ```{r}
 #| echo: false
-# Create a focused map showing the proposed school location
-create_school_location_map <- function(optimal_data, school_type,
-                                        rank = 1 # 1 for optimal, 3 for third best
-                                        ) 
-{
-  
-  # Get the optimal location (first row is rank 1 - best location)
-  new_school <- optimal_data |> slice(rank)
-  
-  leaflet(new_school) |>
-    addProviderTiles(providers$CartoDB.Positron) |>
-    addMarkers(
-      lng = ~longitude,
-      lat = ~latitude,
-      popup = ~paste0(
-        "<strong>Proposed ", school_type, " School</strong><br>",
-        "Location: ", round(longitude, 4), ", ", round(latitude, 4), "<br>",
-        "Time Reduction: ", round(time_reduction_min, 2), " minutes<br>",
-        "Current Average: ", round(current_avg_walk_time_min, 1), " mins<br>",
-        "New Average: ", round(new_avg_walk_time_min, 1), " mins"
-      ),
-      icon = makeIcon(
-        iconUrl = "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
-        shadowUrl = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
-        iconWidth = 25, iconHeight = 41,
-        iconAnchorX = 12, iconAnchorY = 41,
-        shadowWidth = 41, shadowHeight = 41
-      )
-    ) |>
-    setView(
-      lng = new_school$longitude, 
-      lat = new_school$latitude, 
-      zoom = 12
-    )
-}
-
 create_school_location_map(optimal_primary, "Primary", rank = 2)
 
 ```
@@ -91,20 +62,12 @@ create_school_location_map(optimal_primary, "Primary", rank = 2)
 
 ::: {.column width="40%"}
 
-Walk Time Comparison
 ```{r}
 #| echo: false
-
-# Calculate current weighted average walk time (2024 baseline)
-current_avg <- round(
-  sum(primary_2024$mean_walk_time_min * primary_2024$population) / sum(primary_2024$population), 
-  digits = 1
-)
-
-# Get projected improvement from optimal school data
-# Assuming your optimal data has the improved walk time in a column
-projected_improvement <- round(optimal_primary$time_reduction_min[2], 1)
-new_avg <- current_avg - projected_improvement
+# Get values for rank 2 location
+current_avg <- round(optimal_primary$current_avg_walk_time_min[2], 1)
+projected_improvement <- round(optimal_primary$time_reduction_min[2], 2)
+new_avg <- round(optimal_primary$new_avg_walk_time_min[2], 1)
 
 # Current walk time KPI
 create_kpi_callout(
@@ -116,13 +79,7 @@ create_kpi_callout(
 ```
 
 ```{r}
-# Calculate current weighted average walk time (2024 baseline)
-current_avg <- round(optimal_primary$current_avg_walk_time_min[1], 1)
-
-# Get projected improvement from optimal school data
-projected_improvement <- round(optimal_primary$time_reduction_min[1], 2)
-new_avg <- round(optimal_primary$new_avg_walk_time_min[1], 1)
-
+#| echo: false
 # Improved walk time KPI
 create_kpi_callout(
   title = "With New School", 
@@ -132,92 +89,16 @@ create_kpi_callout(
   color = "#16a34a"  # Green for improvement
 )
 ```
+
 :::
 
 ::: 
 
-### New Primary School Location & Impact by SA2
-```{r}
-#| echo: false
-
-# Load the walk time data with new school impact (assuming this exists)
-# You'll need to load or calculate SA2-level improvements
-# For now, I'll create the combined map function
-
-create_impact_map_with_school <- function(optimal_data, walk_data, school_type, rank = 2) {
-  
-  # Get the selected school location
-  new_school <- optimal_data |> slice(rank)
-  
-  # Create base map with walk time improvements
-  # Using mean_walk_time_min as proxy for current times (you may need to adjust this)
-  pal <- colorNumeric("RdYlGn", domain = walk_data$mean_walk_time_min, na.color = "#cccccc", reverse = TRUE)
-  
-  leaflet() |>
-    addProviderTiles(providers$CartoDB.Positron) |>
-    # Add SA2 polygons showing current walk times
-    addPolygons(
-      data = walk_data,
-      fillColor = ~pal(mean_walk_time_min),
-      fillOpacity = ~ifelse(population == 0, 0, 0.6),
-      color = "#444444",
-      weight = 1,
-      label = ~paste0(
-        sa2_name, "<br>",
-        "Current Walk Time: ", round(mean_walk_time_min, 1), " mins<br>",
-        "Population (5-14): ", population
-      ) |> lapply(htmltools::HTML),
-      labelOptions = labelOptions(sticky = TRUE),
-      group = "SA2 Walk Times"
-    ) |>
-    # Add the proposed new school
-    addMarkers(
-      data = new_school,
-      lng = ~longitude,
-      lat = ~latitude,
-      popup = ~paste0(
-        "<strong>Proposed ", school_type, " School (Rank ", rank, ")</strong><br>",
-        "Location: ", round(longitude, 4), ", ", round(latitude, 4), "<br>",
-        "Time Reduction: ", round(time_reduction_min, 2), " minutes<br>",
-        "Current Average: ", round(current_avg_walk_time_min, 1), " mins<br>",
-        "New Average: ", round(new_avg_walk_time_min, 1), " mins"
-      ),
-      icon = makeIcon(
-        iconUrl = "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
-        shadowUrl = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
-        iconWidth = 30, iconHeight = 49,
-        iconAnchorX = 15, iconAnchorY = 49,
-        shadowWidth = 51, shadowHeight = 51
-      ),
-      group = "New School"
-    ) |>
-    # Add legend for walk times
-    addLegend(
-      pal = pal,
-      values = walk_data$mean_walk_time_min,
-      title = "Current Walk Time<br>(minutes)",
-      position = "bottomright"
-    ) |>
-    # Add layer control
-    addLayersControl(
-      overlayGroups = c("SA2 Walk Times", "New School"),
-      options = layersControlOptions(collapsed = FALSE)
-    ) |>
-    setView(
-      lng = new_school$longitude, 
-      lat = new_school$latitude, 
-      zoom = 11
-    )
-}
-
-create_impact_map_with_school(optimal_primary, primary_2024, "Primary", rank = 2)
-```
-
-# High School
+# New High School Location
 ::: {.columns}
 
 ::: {.column width="60%"}
-### New High School Location
+
 ```{r}
 #| echo: false
 create_school_location_map(optimal_high, "High")
@@ -228,20 +109,12 @@ create_school_location_map(optimal_high, "High")
 
 ::: {.column width="40%"}
 
-Walk Time Comparison
 ```{r}
 #| echo: false
-
-# Calculate current weighted average walk time (2024 baseline)
-current_avg <- round(
-  sum(high_2024$mean_walk_time_min * high_2024$population) / sum(high_2024$population), 
-  digits = 1
-)
-
-# Get projected improvement from optimal school data
-# Assuming your optimal data has the improved walk time in a column
-projected_improvement <- round(optimal_high$time_reduction_min[2], 1)
-new_avg <- current_avg - projected_improvement
+# Get values for rank 1 location
+current_avg <- round(optimal_high$current_avg_walk_time_min[1], 1)
+projected_improvement <- round(optimal_high$time_reduction_min[1], 2)
+new_avg <- round(optimal_high$new_avg_walk_time_min[1], 1)
 
 # Current walk time KPI
 create_kpi_callout(
@@ -253,14 +126,7 @@ create_kpi_callout(
 ```
 
 ```{r}
-# Calculate current weighted average walk time (2024 baseline)
-current_avg <- round(optimal_high$current_avg_walk_time_min[1], 1)
-
-# Get projected improvement from optimal school data
-projected_improvement <- round(optimal_high$time_reduction_min[1], 2)
-new_avg <- round(optimal_high$new_avg_walk_time_min[1], 1)
-
-
+#| echo: false
 # Improved walk time KPI
 create_kpi_callout(
   title = "With New School", 
