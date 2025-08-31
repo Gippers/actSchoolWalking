@@ -29,3 +29,5 @@ Where new schools should be built to minimize walking distances for students.
 Data sources, methodology, and limitations of this analysis.
 
 > Cuation: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.
+
+> Furthermore, all findings and opinions are my own and do not represent the view of any institutions I am associated with.

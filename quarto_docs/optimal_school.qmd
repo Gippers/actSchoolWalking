@@ -2,7 +2,9 @@
 title: "Optimal New School Locations in 2024"
 ---
 
-Analysis of where new schools should be built to minimize walking distances.
+The purpose of this page is to suggest locations for a future school in the ACT that would have the largest impact on reducing walking times for students. One suggestion is calculated for primary and high school, but a resonable amount of decent options exist. This tool could be used by the department for future planning purposes.
+
+The "Optimal New School Location" was found by randomly sampling 100 locations in the ACT and then calculating the average weighted walk time to a primary and high school's if this new schools was included. 
 
 ```{r setup}
 #| echo: false
@@ -106,6 +108,10 @@ create_school_location_map <- function(optimal_data, school_type, rank = 1)
 ```
 
 # New Primary School Location
+
+One of the best new primary school locations was estimated to be in North West Taylor. Worth noting that the pin is indicative of the area, not the exact location to place the school. Realistically, primary schools appear quite nicely distributed which results in only a small differences from this potential new school.
+
+
 ::: {.columns}
 
 ::: {.column width="60%"}
@@ -153,6 +159,9 @@ create_kpi_callout(
 ::: 
 
 # New High School Location
+The best new high school location was estimated to be at the confluence of Wright, Coombs, Duffy and Holder. This makes a lot of sense, as this newly developed area in Canberra has attracted many young families. This is likely a more interesting finding that the primary school location, as high schools are fewer and more sparsely distributed.
+
+
 ::: {.columns}
 
 ::: {.column width="60%"}

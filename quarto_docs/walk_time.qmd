@@ -50,6 +50,8 @@ high_2024_avg <- round(sum(high_2024$mean_walk_time_min *
         high_2024$population) / sum(high_2024$population), digits = 1)
 ```
 
+Walk times were computed by placing 10 random locations in each sa2, and then calculating the average walk time to the closest primary or high school. Then the populations was evenly weighted to each of the random locations in the SA2 and a weighted average walk time was estimated. 
+
 # Primary Schools
 
 ## Walk Time KPIs

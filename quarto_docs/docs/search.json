@@ -4,7 +4,7 @@
     "href": "optimal_school.html",
     "title": "Optimal New School Locations in 2024",
     "section": "",
-    "text": "Analysis of where new schools should be built to minimize walking distances.\n\nNew Primary School Location\n\n\n\n\n\n\n\n\n\n\n\n\nCurrent Average (2024)\n17.3 mins\nPopulation-weighted walk time to nearest primary school\n\n\n\n\n\n\nWith New School\n17 mins\nImprovement: -0.32 minutes (1.8% reduction)\n\n\n\n\n\n\n\nNew High School Location\n\n\n\n\n\n\n\n\n\n\n\n\nCurrent Average (2024)\n29.3 mins\nPopulation-weighted walk time to nearest high school\n\n\n\n\n\n\nWith New School\n27.3 mins\nImprovement: -2.01 minutes (6.9% reduction)"
+    "text": "The purpose of this page is to suggest locations for a future school in the ACT that would have the largest impact on reducing walking times for students. One suggestion is calculated for primary and high school, but a resonable amount of decent options exist. This tool could be used by the department for future planning purposes.\nThe “Optimal New School Location” was found by randomly sampling 100 locations in the ACT and then calculating the average weighted walk time to a primary and high school’s if this new schools was included.\n\nNew Primary School Location\nOne of the best new primary school locations was estimated to be in North West Taylor. Worth noting that the pin is indicative of the area, not the exact location to place the school. Realistically, primary schools appear quite nicely distributed which results in only a small differences from this potential new school.\n\n\n\n\n\n\n\n\n\n\n\n\nCurrent Average (2024)\n17.3 mins\nPopulation-weighted walk time to nearest primary school\n\n\n\n\n\n\nWith New School\n17 mins\nImprovement: -0.32 minutes (1.8% reduction)\n\n\n\n\n\n\n\nNew High School Location\nThe best new high school location was estimated to be at the confluence of Wright, Coombs, Duffy and Holder. This makes a lot of sense, as this newly developed area in Canberra has attracted many young families. This is likely a more interesting finding that the primary school location, as high schools are fewer and more sparsely distributed.\n\n\n\n\n\n\n\n\n\n\n\n\nCurrent Average (2024)\n29.3 mins\nPopulation-weighted walk time to nearest high school\n\n\n\n\n\n\nWith New School\n27.3 mins\nImprovement: -2.01 minutes (6.9% reduction)"
   },
   {
     "objectID": "index.html",
@@ -46,7 +46,7 @@
     "href": "index.html#method-and-assumptions",
     "title": "",
     "section": "Method and Assumptions",
-    "text": "Method and Assumptions\nData sources, methodology, and limitations of this analysis.\n\nCuation: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up."
+    "text": "Method and Assumptions\nData sources, methodology, and limitations of this analysis.\n\nCuation: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.\n\n\nFurthermore, all findings and opinions are my own and do not represent the view of any institutions I am associated with."
   },
   {
     "objectID": "method.html",
@@ -56,18 +56,18 @@
     "text": "Brief notes about data sources, preprocessing, and caveats."
   },
   {
-    "objectID": "method.html#story",
-    "href": "method.html#story",
-    "title": "Methods",
-    "section": "Story",
-    "text": "Story"
-  },
-  {
     "objectID": "method.html#data",
     "href": "method.html#data",
     "title": "Methods",
     "section": "Data",
-    "text": "Data\n\nSA2 Shapefile Geoboundaries provided me with the data to geocode SA2’s.\nSchools in ACT Was my initial source for ACT goverment School opening and closing dates. This was important as to do a longitudinal analysis of walk times, I required information about schools that use to be open in 2001. In addition, I supplemented this dataset with wikipedia article, as the previous dataset hadn’t been updated in recent years. I geocoded each school by searching for it in google maps.\n2001-2021 ERP Data with ASGS3 boundaries data set provides the Estimated Residential Population from 2001 to 2024. This is the backbone of my analysis, as it provided information on"
+    "text": "Data\n\nSA2 Shapefile Geoboundaries provided me with the data to geocode SA2’s.\nSchools in ACT Was my initial source for ACT goverment School opening and closing dates. This was important as to do a longitudinal analysis of walk times, I required information about schools that use to be open in 2001. In addition, I supplemented this dataset with wikipedia article, as the previous dataset hadn’t been updated in recent years. I geocoded each school by searching for it in google maps.\n2001-2021 ERP Data with ASGS3 boundaries data set provides the Estimated Residential Population from 2001 to 2024. This is the backbone of my analysis,\nOpen Street Maps (OSM) Walking Network The OSM walking network is utilized by the dodgr package to created a graph network that can be used to calculated walking distance and speed."
+  },
+  {
+    "objectID": "method.html#method-and-limitations",
+    "href": "method.html#method-and-limitations",
+    "title": "Methods",
+    "section": "Method and Limitations",
+    "text": "Method and Limitations\n\nGiven computational constraints, walk times per suburb were computed by placing 10 random locations in each sa2, and the walk time to the closest primary or high school was calculated. Then the populations was evenly weighted to each of the random locations and a weighted walk time was estimated for the SA2,\nThe “Optimal New School Location” was found by randomly sampling 100 locations in the ACT and then calculating the average weighted walk time to a primary and high school’s if this new schools was included."
   },
   {
     "objectID": "method.html#assumptions",
@@ -75,13 +75,6 @@
     "title": "Methods",
     "section": "Assumptions",
     "text": "Assumptions\nGiven data limitations, many assumptions had to be made. Some of these assumptions are contained below: - Assume that 5-9 yo are representative of primary school aged children and 10-14 for high school aged children, - Assume that the populations are evenly distributed in each SA2, - Assume that walkways are accessible to all students (which they will not be in reality), - All children go to school, doesn’t account for home schooling, - Assume that schools have infitine capacity. In reality, schools will have a fixed numer of students that they can teach. Future analyis could account for this, and it may result in resonably different findings particularily about where the optimal school placement is. - Some outer suburbs in Canberra were removed because of their small populations."
-  },
-  {
-    "objectID": "method.html#limitations",
-    "href": "method.html#limitations",
-    "title": "Methods",
-    "section": "Limitations",
-    "text": "Limitations"
   },
   {
     "objectID": "method.html#further-analysis",
@@ -95,7 +88,7 @@
     "href": "walk_time.html",
     "title": "Average Walk Time Analysis",
     "section": "",
-    "text": "Analysis of walking times to nearest schools across the ACT."
+    "text": "Analysis of walking times to nearest schools across the ACT.\nWalk times were computed by placing 10 random locations in each sa2, and then calculating the average walk time to the closest primary or high school. Then the populations was evenly weighted to each of the random locations in the SA2 and a weighted average walk time was estimated."
   },
   {
     "objectID": "walk_time.html#walk-time-kpis",
@@ -130,7 +123,7 @@
     "href": "population_analysis.html",
     "title": "Canberra SA2 — School Aged Estimate Residential Population (5-14) Changes",
     "section": "",
-    "text": "The below graphs demonstrate the estimated change in school aged population from 2001 to 2024. The few key things worth noting are that in 2001 there were a lot of young familes in south Canberra. In 2004, there are still a large number however, there has been a considerable decline. Instead, many more families have moved to the newer Canberra suburbs such as greater Gungahlin and Coombs/Wright area. Overall there has been an increase of school aged children since 2001."
+    "text": "The below graphs demonstrate the estimated change in school aged population from 2001 to 2024. The few key things worth noting are that in 2001 there were a lot of young familes in south Canberra. In 2004, there are still a large number however, there has been a considerable decline. Instead, many more families have moved to the newer Canberra suburbs such as greater Gungahlin and Coombs/Wright area. Finally, overall there has been an increase of school aged children since 2001."
   },
   {
     "objectID": "population_analysis.html#population-map",
@@ -138,12 +131,5 @@
     "title": "Canberra SA2 — School Aged Estimate Residential Population (5-14) Changes",
     "section": "Population Map",
     "text": "Population Map\n\n\n\n2001\n\n\n\n\n\n\n\n\n\n2024"
-  },
-  {
-    "objectID": "method.html#method-and-limitations",
-    "href": "method.html#method-and-limitations",
-    "title": "Methods",
-    "section": "Method and Limitations",
-    "text": "Method and Limitations\n\nGiven computational constraints, walk times were computed by placing 10 random locations in each sa2, and the walk time to the closest primary or high school was calculated. Then the populations was evenly weighted to each of the random locations and a weighted walk time was estimated for the SA2,\nThe “Optimal New School Location” was found by randomly sampling 100 locations in the ACT and then calculating the average weighted walk time to a primary and high school’s if this new schools was included."
   }
 ]
