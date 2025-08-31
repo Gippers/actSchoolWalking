@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "optimal_school.html",
+    "href": "optimal_school.html",
+    "title": "Optimal New School Location",
+    "section": "",
+    "text": "Analysis of where new schools should be built to minimize walking distances."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "index.html#questions",
+    "href": "index.html#questions",
+    "title": "",
+    "section": "Questions",
+    "text": "Questions\n\nHow has the geographic distribution of school aged children changed since 2001?\nHow long would it take on average for school aged children in the ACT to walk to their nearest ACT public primary or high school?\nIf a new primary or high school were built today, where would be the optimal place to build it to reduce the distance"
+  },
+  {
+    "objectID": "index.html#geographic-distribution",
+    "href": "index.html#geographic-distribution",
+    "title": "",
+    "section": "Geographic Distribution",
+    "text": "Geographic Distribution\nAnalysis of how school-aged population has shifted across ACT regions since 2001."
+  },
+  {
+    "objectID": "index.html#average-walk-time",
+    "href": "index.html#average-walk-time",
+    "title": "",
+    "section": "Average Walk Time",
+    "text": "Average Walk Time\nCurrent walking times to nearest schools and how they’ve changed over time."
+  },
+  {
+    "objectID": "index.html#optimal-new-school",
+    "href": "index.html#optimal-new-school",
+    "title": "",
+    "section": "Optimal New School",
+    "text": "Optimal New School\nWhere new schools should be built to minimize walking distances for students."
+  },
+  {
+    "objectID": "index.html#method-and-assumptions",
+    "href": "index.html#method-and-assumptions",
+    "title": "",
+    "section": "Method and Assumptions",
+    "text": "Method and Assumptions\nData sources, methodology, and limitations of this analysis.\nWarning: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up."
+  },
+  {
+    "objectID": "method.html",
+    "href": "method.html",
+    "title": "Methods",
+    "section": "",
+    "text": "Brief notes about data sources, preprocessing, and caveats."
+  },
+  {
+    "objectID": "method.html#story",
+    "href": "method.html#story",
+    "title": "Methods",
+    "section": "Story",
+    "text": "Story"
+  },
+  {
+    "objectID": "method.html#data",
+    "href": "method.html#data",
+    "title": "Methods",
+    "section": "Data",
+    "text": "Data\n\nSA2 Shapefile Geoboundaries\nSchools in ACT https://www.library.act.gov.au/find/history/frequentlyaskedquestions/Place_Stories/schools?utm_source\n\nsupplemented with wiki: https://en.wikipedia.org/wiki/List_of_schools_in_the_Australian_Capital_Territory\n\n2001-2021 ERP Data with ASGS3 boundaries: https://dataexplorer.abs.gov.au/vis?fs[0]=People%2C1%7CPopulation%23POPULATION%23%7CEstimated%20Resident%20Population%23ERP%23&pg=20&fc=Region&bp=true&snb=37&df[ds]=PEOPLE_TOPICS&df[id]=ERP_ASGS2021&df[ag]=ABS&df[vs]=1.0.0&dq=…GCCSA..A&pd=2024%2C&to[TIME_PERIOD]=false&ly[cl]=AGE&ly[rs]=SEX&ly[rw]=ASGS_2021"
+  },
+  {
+    "objectID": "method.html#assumptions",
+    "href": "method.html#assumptions",
+    "title": "Methods",
+    "section": "Assumptions",
+    "text": "Assumptions"
+  },
+  {
+    "objectID": "method.html#limitations",
+    "href": "method.html#limitations",
+    "title": "Methods",
+    "section": "Limitations",
+    "text": "Limitations"
+  },
+  {
+    "objectID": "walk_time.html",
+    "href": "walk_time.html",
+    "title": "Average Walk Time Analysis",
+    "section": "",
+    "text": "Analysis of walking times to nearest schools across the ACT."
+  },
+  {
+    "objectID": "population_analysis.html",
+    "href": "population_analysis.html",
+    "title": "Canberra SA2 — School Aged Population Changes",
+    "section": "",
+    "text": "Reading layer `erp_sa2' from data source \n  `/home/tom/Documents/GovHack 2025/actSchoolWalking/data/erp_sa2.gpkg' \n  using driver `GPKG'\nSimple feature collection with 9000 features and 5 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 148.9614 ymin: -35.48032 xmax: 149.2333 ymax: -35.1244\nGeodetic CRS:  WGS 84"
+  },
+  {
+    "objectID": "population_analysis.html#population-map",
+    "href": "population_analysis.html#population-map",
+    "title": "Canberra SA2 — School Aged Population Changes",
+    "section": "Population Map",
+    "text": "Population Map\n\n\nACT School-Age Population Changes (10-14 years)\n2001\n\n\n2024"
+  },
+  {
+    "objectID": "population_analysis.html#todo-population-change-over-time-graph",
+    "href": "population_analysis.html#todo-population-change-over-time-graph",
+    "title": "Canberra SA2 — School Aged Population Changes",
+    "section": "TODO Population Change over Time Graph",
+    "text": "TODO Population Change over Time Graph"
+  }
+]

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Average Walk Time Analysis</title>
+<title>ACT School Walking Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,56 +58,168 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="walk_time_files/libs/clipboard/clipboard.min.js"></script>
-<script src="walk_time_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="walk_time_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="walk_time_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="walk_time_files/libs/quarto-html/popper.min.js"></script>
-<script src="walk_time_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="walk_time_files/libs/quarto-html/anchor.min.js"></script>
-<link href="walk_time_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="walk_time_files/libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="walk_time_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="walk_time_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="walk_time_files/libs/bootstrap/bootstrap-efb2415c8fd8814f22ae209a9060edbf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-504a9bf906308d7312c9b8e8da5ca46b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="quarto-light">
+<body class="nav-fixed quarto-light">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-  
-</div>
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Average Walk Time Analysis</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">ACT School Walking Analysis</span>
+    </a>
   </div>
-  
-
-
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./population_analysis.html"> 
+<span class="menu-text">Population Analysis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./walk_time.html"> 
+<span class="menu-text">Average Walk Time</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./optimal_school.html"> 
+<span class="menu-text">Optimal New School</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./method.html"> 
+<span class="menu-text">Methods &amp; Assumptions</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
 </header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#act-school-walking-analysis" id="toc-act-school-walking-analysis" class="nav-link active" data-scroll-target="#act-school-walking-analysis">ACT School Walking Analysis</a>
+  <ul class="collapse">
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#geographic-distribution" id="toc-geographic-distribution" class="nav-link" data-scroll-target="#geographic-distribution">Geographic Distribution</a></li>
+  <li><a href="#average-walk-time" id="toc-average-walk-time" class="nav-link" data-scroll-target="#average-walk-time">Average Walk Time</a></li>
+  <li><a href="#optimal-new-school" id="toc-optimal-new-school" class="nav-link" data-scroll-target="#optimal-new-school">Optimal New School</a></li>
+  <li><a href="#method-and-assumptions" id="toc-method-and-assumptions" class="nav-link" data-scroll-target="#method-and-assumptions">Method and Assumptions</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7"></h1></header><div class="quarto-title-block"><div class="quarto-title-tools-only"><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 
 
-<p>Analysis of walking times to nearest schools across the ACT.</p>
+
+
+<section id="act-school-walking-analysis" class="level1">
+<h1>ACT School Walking Analysis</h1>
+<p>As part of Govhack 2025, the Australian Captial Territory (ACT) set the following challenge:</p>
+<blockquote class="blockquote">
+<p>How can we leverage graph analytics, generative AI and other data approaches to optimise public school transport networks to make it simple to get the next generation of students to school with less hassle?</p>
+</blockquote>
+<p>An imporant, and potentially under appreciated aspect of travelling to school is walking. In 2018 in the ACT approximately 40 per cent of children were reported to usually walk or cylce to school <a href="https://www.healthyschoolsact.com.au/our-priorities/physical-activity">Healthy Schools ACT</a>. Walking to school helps children stay physically active, reduces traffic and helps to reduce our carbon footprint <a href="https://education.nsw.gov.au/teaching-and-learning/curriculum/road-safety-education/safe-travel/walking">NSW Education</a>.</p>
+<p>A key consideration in children being able to walk to school is the distance that they need to travel. If local communities in the ACT don’t have a local primary or high school, then children won’t have the same opportunity to walk to school. This is particulary important if as the ACT matures and families start to live in different parts of Canberra, the school system does not adapt to these shifting demands.</p>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ul>
+<li>How has the geographic distribution of school aged children changed since 2001?</li>
+<li>How long would it take on average for school aged children in the ACT to walk to their nearest ACT public primary or high school?</li>
+<li>If a new primary or high school were built today, where would be the optimal place to build it to reduce the distance</li>
+</ul>
+</section>
+<section id="geographic-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="geographic-distribution"><a href="./population_analysis.html">Geographic Distribution</a></h2>
+<p>Analysis of how school-aged population has shifted across ACT regions since 2001.</p>
+</section>
+<section id="average-walk-time" class="level2">
+<h2 class="anchored" data-anchor-id="average-walk-time"><a href="./walk_time.html">Average Walk Time</a></h2>
+<p>Current walking times to nearest schools and how they’ve changed over time.</p>
+</section>
+<section id="optimal-new-school" class="level2">
+<h2 class="anchored" data-anchor-id="optimal-new-school"><a href="./optimal_school.html">Optimal New School</a></h2>
+<p>Where new schools should be built to minimize walking distances for students.</p>
+</section>
+<section id="method-and-assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="method-and-assumptions"><a href="./method.html">Method and Assumptions</a></h2>
+<p>Data sources, methodology, and limitations of this analysis.</p>
+<p>Warning: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.</p>
+
+
 <!-- -->
 
+</section>
+</section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -558,22 +670,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Average Walk Time Analysis"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># ACT School Walking Analysis</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>As part of Govhack 2025, the Australian Captial Territory (ACT) set the following challenge:</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Analysis of walking times to nearest schools across the ACT.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; How can we leverage graph analytics, generative AI and other data approaches to optimise public school transport networks to make it simple to get the next generation of students to school with less hassle?</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup}</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your walk time data</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># walk_times &lt;- st_read("../data/walk_analysis/school_walk_times_2024.gpkg")</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>An imporant, and potentially under appreciated aspect of travelling to school is walking. In 2018 in the ACT approximately 40 per cent of children were reported to usually walk or cylce to school <span class="co">[</span><span class="ot">Healthy Schools ACT</span><span class="co">](https://www.healthyschoolsact.com.au/our-priorities/physical-activity)</span>. Walking to school helps children stay physically active, reduces traffic and helps to reduce our carbon footprint <span class="co">[</span><span class="ot">NSW Education</span><span class="co">](https://education.nsw.gov.au/teaching-and-learning/curriculum/road-safety-education/safe-travel/walking)</span>. </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>A key consideration in children being able to walk to school is the distance that they need to travel. If local communities in the ACT don't have a local primary or high school, then children won't have the same opportunity to walk to school. This is particulary important if as the ACT matures and families start to live in different parts of Canberra, the school system does not adapt to these shifting demands.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Questions</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How has the geographic distribution of school aged children changed since 2001?</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How long would it take on average for school aged children in the ACT to walk to their nearest ACT public primary or high school?</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If a new primary or high school were built today, where would be the optimal place to build it to reduce the distance </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Geographic Distribution](population_analysis.qmd)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Analysis of how school-aged population has shifted across ACT regions since 2001.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Average Walk Time](walk_time.qmd)</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Current walking times to nearest schools and how they've changed over time.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Optimal New School](optimal_school.qmd)</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Where new schools should be built to minimize walking distances for students.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Method and Assumptions](method.qmd)</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Data sources, methodology, and limitations of this analysis.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Warning: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
