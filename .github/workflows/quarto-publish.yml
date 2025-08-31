@@ -27,3 +27,6 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: quarto_docs/docs
+          
+      - name: Deploy to GitHub Pages  # This step was missing!
+        uses: actions/deploy-pages@v2
