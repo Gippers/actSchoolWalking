@@ -1,0 +1,17 @@
+
+---
+title: "Optimal New School Location"
+---
+
+Analysis of where new schools should be built to minimize walking distances.
+
+```{r setup}
+#| include: false
+library(sf)
+library(leaflet)
+library(dplyr)
+
+# Load optimal location data
+# optimal_primary <- st_read("../data/new_schools/optimal_primary_location_2024.gpkg")
+# optimal_high <- st_read("../data/new_schools/optimal_high_location_2024.gpkg")
+```

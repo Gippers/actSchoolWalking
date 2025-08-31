@@ -1,0 +1,16 @@
+---
+title: "Average Walk Time Analysis"
+---
+
+Analysis of walking times to nearest schools across the ACT.
+
+```{r setup}
+#| include: false
+library(sf)
+library(leaflet)
+library(dplyr)
+library(ggplot2)
+
+# Load your walk time data
+# walk_times <- st_read("../data/walk_analysis/school_walk_times_2024.gpkg")
+```

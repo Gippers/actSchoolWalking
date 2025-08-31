@@ -14,7 +14,14 @@ A key consideration in children being able to walk to school is the distance tha
 - How long would it take on average for school aged children in the ACT to walk to their nearest ACT public primary or high school?
 - If a new primary or high school were built today, where would be the optimal place to build it to reduce the distance 
 
-## Geographic Distribution
-## Average Walk Time
-## Optimal New School
-## Method and Assumptions
+## [Geographic Distribution](population_analysis.qmd)
+Analysis of how school-aged population has shifted across ACT regions since 2001.
+
+## [Average Walk Time](walk_time.qmd)
+Current walking times to nearest schools and how they've changed over time.
+
+## [Optimal New School](optimal_school.qmd)
+Where new schools should be built to minimize walking distances for students.
+
+## [Method and Assumptions](method.qmd)
+Data sources, methodology, and limitations of this analysis.
