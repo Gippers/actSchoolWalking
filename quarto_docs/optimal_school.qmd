@@ -35,9 +35,9 @@ create_kpi_callout <- function(title, value, subtitle, color = "#2166AC") {
   )
 }
 
-# Create a focused map showing the proposed school location
-c# Create a focused map showing the proposed school location with SA2 background
-create_school_location_map <- function(optimal_data, school_type, rank = 1) {
+# Create a focused map showing the proposed school location with SA2 background
+create_school_location_map <- function(optimal_data, school_type, rank = 1) 
+{
   # Get the optimal location
   new_school <- optimal_data[rank,]
   

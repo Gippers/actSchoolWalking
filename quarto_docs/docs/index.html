@@ -166,9 +166,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#act-school-walking-analysis" id="toc-act-school-walking-analysis" class="nav-link active" data-scroll-target="#act-school-walking-analysis">ACT School Walking Analysis</a>
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#geographic-distribution" id="toc-geographic-distribution" class="nav-link" data-scroll-target="#geographic-distribution">Geographic Distribution</a></li>
+  <li><a href="#population-changes" id="toc-population-changes" class="nav-link" data-scroll-target="#population-changes">Population Changes</a></li>
   <li><a href="#average-walk-time" id="toc-average-walk-time" class="nav-link" data-scroll-target="#average-walk-time">Average Walk Time</a></li>
-  <li><a href="#optimal-new-school" id="toc-optimal-new-school" class="nav-link" data-scroll-target="#optimal-new-school">Optimal New School</a></li>
+  <li><a href="#future-school-optimisation" id="toc-future-school-optimisation" class="nav-link" data-scroll-target="#future-school-optimisation">Future School Optimisation</a></li>
   <li><a href="#method-and-assumptions" id="toc-method-and-assumptions" class="nav-link" data-scroll-target="#method-and-assumptions">Method and Assumptions</a></li>
   </ul></li>
   </ul>
@@ -186,33 +186,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>How can we leverage graph analytics, generative AI and other data approaches to optimise public school transport networks to make it simple to get the next generation of students to school with less hassle?</p>
 </blockquote>
-<p>An imporant, and potentially under appreciated aspect of travelling to school is walking. In 2018 in the ACT approximately 40 per cent of children were reported to usually walk or cylce to school <a href="https://www.healthyschoolsact.com.au/our-priorities/physical-activity">Healthy Schools ACT</a>. Walking to school helps children stay physically active, reduces traffic and helps to reduce our carbon footprint <a href="https://education.nsw.gov.au/teaching-and-learning/curriculum/road-safety-education/safe-travel/walking">NSW Education</a>.</p>
-<p>A key consideration in children being able to walk to school is the distance that they need to travel. If local communities in the ACT don’t have a local primary or high school, then children won’t have the same opportunity to walk to school. This is particulary important if as the ACT matures and families start to live in different parts of Canberra, the school system does not adapt to these shifting demands.</p>
+<p>An important and potentially under appreciated aspect of travelling to school is walking. In 2011-12 less than one-quarter (23 per cent) of children aged 5–14 undertook the recommended 60 minutes of physical activity every day (<a href="https://www.aihw.gov.au/reports/children-youth/australias-children/contents/health/physical-activity">AIHW</a>). Walking to school can and does helps children stay physically active, reduces traffic and helps to reduce our carbon footprint (<a href="https://education.nsw.gov.au/teaching-and-learning/curriculum/road-safety-education/safe-travel/walking">NSW Education</a>).</p>
+<p>A key consideration in children being able to walk to school is the distance that they need to travel. In 2018 in the ACT approximately 40 per cent of children were reported to usually walk or cylce to school (<a href="https://www.healthyschoolsact.com.au/our-priorities/physical-activity">Healthy Schools ACT</a>). If local communities in the ACT don’t have a local primary or high school, then children won’t have the same opportunity to walk to school. This is particulary important if as the ACT matures and families start to live in different parts of Canberra, the school system does not adapt to these shifting demands.</p>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
 <ul>
 <li>How has the geographic distribution of school aged children changed since 2001?</li>
 <li>How long would it take on average for school aged children in the ACT to walk to their nearest ACT public primary or high school?</li>
-<li>If a new primary or high school were built today, where would be the optimal place to build it to reduce the distance</li>
+<li>If a new primary or high school were built today, where would be the optimal place to build it to reduce the distance?</li>
 </ul>
 </section>
-<section id="geographic-distribution" class="level2">
-<h2 class="anchored" data-anchor-id="geographic-distribution"><a href="population_analysis.html">Geographic Distribution</a></h2>
+<section id="population-changes" class="level2">
+<h2 class="anchored" data-anchor-id="population-changes"><a href="population_analysis.html">Population Changes</a></h2>
 <p>Analysis of how school-aged population has shifted across ACT regions since 2001.</p>
 </section>
 <section id="average-walk-time" class="level2">
 <h2 class="anchored" data-anchor-id="average-walk-time"><a href="walk_time.html">Average Walk Time</a></h2>
 <p>Current walking times to nearest schools and how they’ve changed over time.</p>
 </section>
-<section id="optimal-new-school" class="level2">
-<h2 class="anchored" data-anchor-id="optimal-new-school"><a href="optimal_school.html">Optimal New School</a></h2>
+<section id="future-school-optimisation" class="level2">
+<h2 class="anchored" data-anchor-id="future-school-optimisation"><a href="optimal_school.html">Future School Optimisation</a></h2>
 <p>Where new schools should be built to minimize walking distances for students.</p>
 </section>
 <section id="method-and-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="method-and-assumptions"><a href="method.html">Method and Assumptions</a></h2>
 <p>Data sources, methodology, and limitations of this analysis.</p>
 <blockquote class="blockquote">
-<p>FYI: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.</p>
+<p>Cuation: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.</p>
 </blockquote>
 
 
@@ -678,28 +678,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; How can we leverage graph analytics, generative AI and other data approaches to optimise public school transport networks to make it simple to get the next generation of students to school with less hassle?</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>An imporant, and potentially under appreciated aspect of travelling to school is walking. In 2018 in the ACT approximately 40 per cent of children were reported to usually walk or cylce to school <span class="co">[</span><span class="ot">Healthy Schools ACT</span><span class="co">](https://www.healthyschoolsact.com.au/our-priorities/physical-activity)</span>. Walking to school helps children stay physically active, reduces traffic and helps to reduce our carbon footprint <span class="co">[</span><span class="ot">NSW Education</span><span class="co">](https://education.nsw.gov.au/teaching-and-learning/curriculum/road-safety-education/safe-travel/walking)</span>. </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>An important and potentially under appreciated aspect of travelling to school is walking. In 2011-12 less than one-quarter (23 per cent) of children aged 5–14 undertook the recommended 60 minutes of physical activity every day (<span class="co">[</span><span class="ot">AIHW</span><span class="co">](https://www.aihw.gov.au/reports/children-youth/australias-children/contents/health/physical-activity)</span>). Walking to school can and does helps children stay physically active, reduces traffic and helps to reduce our carbon footprint (<span class="co">[</span><span class="ot">NSW Education</span><span class="co">](https://education.nsw.gov.au/teaching-and-learning/curriculum/road-safety-education/safe-travel/walking)</span>). </span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>A key consideration in children being able to walk to school is the distance that they need to travel. If local communities in the ACT don't have a local primary or high school, then children won't have the same opportunity to walk to school. This is particulary important if as the ACT matures and families start to live in different parts of Canberra, the school system does not adapt to these shifting demands.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a> </span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Questions</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How has the geographic distribution of school aged children changed since 2001?</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How long would it take on average for school aged children in the ACT to walk to their nearest ACT public primary or high school?</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If a new primary or high school were built today, where would be the optimal place to build it to reduce the distance </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Geographic Distribution](population_analysis.html)</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Analysis of how school-aged population has shifted across ACT regions since 2001.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Average Walk Time](walk_time.html)</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Current walking times to nearest schools and how they've changed over time.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Optimal New School](optimal_school.html)</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Where new schools should be built to minimize walking distances for students.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Method and Assumptions](method.html)</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Data sources, methodology, and limitations of this analysis.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; FYI: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>A key consideration in children being able to walk to school is the distance that they need to travel. In 2018 in the ACT approximately 40 per cent of children were reported to usually walk or cylce to school (<span class="co">[</span><span class="ot">Healthy Schools ACT</span><span class="co">](https://www.healthyschoolsact.com.au/our-priorities/physical-activity)</span>). If local communities in the ACT don't have a local primary or high school, then children won't have the same opportunity to walk to school. This is particulary important if as the ACT matures and families start to live in different parts of Canberra, the school system does not adapt to these shifting demands.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Questions</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How has the geographic distribution of school aged children changed since 2001?</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>How long would it take on average for school aged children in the ACT to walk to their nearest ACT public primary or high school?</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>If a new primary or high school were built today, where would be the optimal place to build it to reduce the distance?</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Population Changes](population_analysis.html)</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Analysis of how school-aged population has shifted across ACT regions since 2001.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Average Walk Time](walk_time.html)</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Current walking times to nearest schools and how they've changed over time.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Future School Optimisation](optimal_school.html)</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Where new schools should be built to minimize walking distances for students.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## [Method and Assumptions](method.html)</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Data sources, methodology, and limitations of this analysis.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Cuation: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

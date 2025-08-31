@@ -34,6 +34,7 @@ erp <- erp |>
     mutate(value = erp, metric = "Population 5-14")
 ```
 
+The below graphs demonstrate the estimated change in school aged population from 2001 to 2024. The few key things worth noting are that in 2001 there were a lot of young familes in south Canberra. In 2004, there are still a large number however, there has been a considerable decline. Instead, many more families have moved to the newer Canberra suburbs such as greater Gungahlin and Coombs/Wright area. Finally, overall there has been an increase of school aged children since 2001.
 
 ## Population Map
 
