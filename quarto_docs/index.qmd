@@ -26,4 +26,4 @@ Where new schools should be built to minimize walking distances for students.
 ## [Method and Assumptions](method.qmd)
 Data sources, methodology, and limitations of this analysis.
 
-Warning: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.
+> FYI: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.
