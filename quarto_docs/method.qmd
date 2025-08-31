@@ -15,3 +15,8 @@ Brief notes about data sources, preprocessing, and caveats.
 ## Assumptions
 
 ## Limitations
+
+## Further Analysis
+- Use forecasting data to plan into the future,
+- Take into account private schools and school capacities,
+- 
