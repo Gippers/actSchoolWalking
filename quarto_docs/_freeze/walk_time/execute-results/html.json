@@ -1,0 +1,15 @@
+{
+  "hash": "d8f8071f5b139be2c6604bec7af47f24",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Average Walk Time Analysis\"\n---\n\nAnalysis of walking times to nearest schools across the ACT.\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

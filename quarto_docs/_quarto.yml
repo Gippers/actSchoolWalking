@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  execute-dir: project  # This makes all code execute from project root
+
 
 website:
   title: "ACT School Walking Analysis"
