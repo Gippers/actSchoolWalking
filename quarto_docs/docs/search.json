@@ -89,26 +89,5 @@
     "title": "Average Walk Time Analysis",
     "section": "",
     "text": "Analysis of walking times to nearest schools across the ACT."
-  },
-  {
-    "objectID": "population_analysis.html",
-    "href": "population_analysis.html",
-    "title": "Canberra SA2 — School Aged Population Changes",
-    "section": "",
-    "text": "Reading layer `erp_sa2' from data source \n  `/home/tom/Documents/GovHack 2025/actSchoolWalking/data/erp_sa2.gpkg' \n  using driver `GPKG'\nSimple feature collection with 9000 features and 5 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 148.9614 ymin: -35.48032 xmax: 149.2333 ymax: -35.1244\nGeodetic CRS:  WGS 84"
-  },
-  {
-    "objectID": "population_analysis.html#population-map",
-    "href": "population_analysis.html#population-map",
-    "title": "Canberra SA2 — School Aged Population Changes",
-    "section": "Population Map",
-    "text": "Population Map\n\n\nACT School-Age Population Changes (10-14 years)\n2001\n\n\n2024"
-  },
-  {
-    "objectID": "population_analysis.html#todo-population-change-over-time-graph",
-    "href": "population_analysis.html#todo-population-change-over-time-graph",
-    "title": "Canberra SA2 — School Aged Population Changes",
-    "section": "TODO Population Change over Time Graph",
-    "text": "TODO Population Change over Time Graph"
   }
 ]
