@@ -25,8 +25,6 @@ high_2024 <- walk_2024 |> filter(school_type == "high")
 
 ```
 
-## Overall Walk Times
-
 ```{r}
 #| echo: false
 
@@ -98,10 +96,6 @@ create_kpi_callout(
 
 ## Primary School Walk Time Maps
 
-::: {.columns}
-
-::: {.column width="50%"}
-
 ### 2024
 ```{r}
 create_walk_time_map <- function(data, year, school_type) {
@@ -126,7 +120,7 @@ create_walk_time_map <- function(data, year, school_type) {
     addLegend(
       pal = pal, 
       values = ~mean_walk_time_min,
-      title = paste("Walk Time (mins)\n", school_type, year),
+      title = paste("Walk Time (mins) <br>", school_type, year),
       position = "bottomright"
     ) |>
     setView(lng = 149.12, lat = -35.30, zoom = 10)
@@ -141,6 +135,69 @@ create_walk_time_map(primary_2024, 2024, "Primary")
 
 create_walk_time_map(primary_2001, 2001, "Primary")
 ```
+
+# High Schools
+
+## Walk Time KPIs
+
+::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+
+# Create 2001 Primary KPI
+create_kpi_callout(
+  title = "High Schools 2001", 
+  value = high_2001_avg,
+  subtitle = "Population-weighted average walk time",
+  color = "#1e3a8a"
+)
+
+```
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+
+# Calculate change for color coding
+high_change <- high_2024_avg - high_2001_avg
+change_color <- if(high_change > 0) "#dc2626" else "#16a34a"  # Red if worse, green if better
+
+# Create 2024 high KPI with change info
+create_kpi_callout(
+  title = "Primary Schools 2024", 
+  value = high_2024_avg,
+  subtitle = paste0("Change: ", ifelse(high_change >= 0, "+", ""), round(high_change, 1), " mins vs 2001"),
+  color = change_color
+)
+
+```
+
+:::
+
+:::
+
+## High School Walk Time Maps
+
+### 2024
+```{r}
+
+create_walk_time_map(high_2024, 2024, "High")
+
+```
+
+### 2001
+```{r}
+#| echo: false
+
+create_walk_time_map(high_2001, 2001, "High")
+```
+
+
+
 
 
 

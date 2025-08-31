@@ -65,7 +65,7 @@ create_leaflet_map <- function(year_selected) {
     addLegend(
       pal = pal, 
       values = ~value,
-      title = paste("5-14 ERP ", year_selected, "")
+      title = paste("5-14 ERP <br>", year_selected, "")
     ) |>
     setView(lng = 149.12, lat = -35.30, zoom = 10)
 }

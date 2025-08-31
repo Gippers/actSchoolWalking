@@ -91,13 +91,6 @@
     "text": "Analysis of walking times to nearest schools across the ACT."
   },
   {
-    "objectID": "walk_time.html#overall-walk-times",
-    "href": "walk_time.html#overall-walk-times",
-    "title": "Average Walk Time Analysis",
-    "section": "Overall Walk Times",
-    "text": "Overall Walk Times"
-  },
-  {
     "objectID": "walk_time.html#walk-time-kpis",
     "href": "walk_time.html#walk-time-kpis",
     "title": "Average Walk Time Analysis",
@@ -109,6 +102,20 @@
     "href": "walk_time.html#primary-school-walk-time-maps",
     "title": "Average Walk Time Analysis",
     "section": "Primary School Walk Time Maps",
-    "text": "Primary School Walk Time Maps\n\n\n\n2024\n\n\n\n\n\n\n\n\n2001"
+    "text": "Primary School Walk Time Maps\n\n2024\n\n\n\n\n\n\n\n\n2001"
+  },
+  {
+    "objectID": "walk_time.html#walk-time-kpis-1",
+    "href": "walk_time.html#walk-time-kpis-1",
+    "title": "Average Walk Time Analysis",
+    "section": "Walk Time KPIs",
+    "text": "Walk Time KPIs\n\n\n\n\n\nHigh Schools 2001\n26.7 mins\nPopulation-weighted average walk time\n\n\n\n\n\n\n\nPrimary Schools 2024\n29.2 mins\nChange: +2.5 mins vs 2001"
+  },
+  {
+    "objectID": "walk_time.html#high-school-walk-time-maps",
+    "href": "walk_time.html#high-school-walk-time-maps",
+    "title": "Average Walk Time Analysis",
+    "section": "High School Walk Time Maps",
+    "text": "High School Walk Time Maps\n\n2024\n\n\n\n\n\n\n\n\n2001"
   }
 ]
