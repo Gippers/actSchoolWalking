@@ -2,12 +2,36 @@
 
 We all grew up hearing stories of the mountains our parents climbed on their daily trips to school. This raises the question, how long does it actuall take the average primary and high-school aged child in Canberra to walk to school? Have their been any noticable changes over time? 
 
-How long does it take school children in the Australian Capital territory to walk to school?
 
+# ACT School Walking Analysis
 
-## Assumptions
-- 
+As part of Govhack 2025, the Australian Captial Territory (ACT) set the following challenge:
 
-## Used Data
-- Schools in ACT https://www.library.act.gov.au/find/history/frequentlyaskedquestions/Place_Stories/schools?utm_source=chatgpt.com
-- 2001 data onwards: https://dataexplorer.abs.gov.au/vis?fs[0]=People%2C1%7CPopulation%23POPULATION%23%7CEstimated%20Resident%20Population%23ERP%23&pg=20&fc=Region&bp=true&snb=37&df[ds]=PEOPLE_TOPICS&df[id]=ERP_ASGS2021&df[ag]=ABS&df[vs]=1.0.0&dq=...GCCSA..A&pd=2024%2C&to[TIME_PERIOD]=false&ly[cl]=AGE&ly[rs]=SEX&ly[rw]=ASGS_2021
+> How can we leverage graph analytics, generative AI and other data approaches to optimise public school transport networks to make it simple to get the next generation of students to school with less hassle?
+
+An important and potentially under appreciated aspect of travelling to school is walking. In 2011-12 less than one-quarter (23 per cent) of children aged 5–14 undertook the recommended 60 minutes of physical activity every day ([AIHW](https://www.aihw.gov.au/reports/children-youth/australias-children/contents/health/physical-activity)). Walking to school can and does helps children stay physically active, reduces traffic and helps to reduce our carbon footprint ([NSW Education](https://education.nsw.gov.au/teaching-and-learning/curriculum/road-safety-education/safe-travel/walking)). 
+
+ 
+
+A key consideration in children being able to walk to school is the distance that they need to travel. In 2018 in the ACT approximately 40 per cent of children were reported to usually walk or cylce to school ([Healthy Schools ACT](https://www.healthyschoolsact.com.au/our-priorities/physical-activity)). If local communities in the ACT don't have a local primary or high school, then children won't have the same opportunity to walk to school. This is particulary important if as the ACT matures and families start to live in different parts of Canberra, the school system does not adapt to these shifting demands.
+
+## Questions
+- How has the geographic distribution of school aged children changed since 2001?
+- How long would it take on average for school aged children in the ACT to walk to their nearest ACT public primary or high school?
+- If a new primary or high school were built today, where would be the optimal place to build it to reduce the distance?
+
+## [Population Changes](https://gippers.github.io/actSchoolWalking/population_analysis.html)
+Analysis of how school-aged population has shifted across ACT regions since 2001.
+
+## [Average Walk Time](https://gippers.github.io/actSchoolWalking/walk_time.html)
+Current walking times to nearest schools and how they've changed over time.
+
+## [Future School Optimisation](https://gippers.github.io/actSchoolWalking/optimal_school.html)
+Where new schools should be built to minimize walking distances for students.
+
+## [Method and Assumptions](https://gippers.github.io/actSchoolWalking/method.html)
+Data sources, methodology, and limitations of this analysis.
+
+> Cuation: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.
+
+> Furthermore, all findings and opinions are my own and do not represent the view of any institutions I am associated with.
