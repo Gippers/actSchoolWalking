@@ -1,4 +1,4 @@
-pproject:
+project:
   type: website
   output-dir: docs  # Change from _site to docs
   execute-dir: project  # This makes all code execute from project root
