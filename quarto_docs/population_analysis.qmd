@@ -1,5 +1,5 @@
 ---
-title: "Canberra SA2 — School Aged Estimate Residential Population (5-14) Changes"
+title: "Canberra School Aged Estimate Residential Population (5-14) by SA2"
 execute:
   echo: false
   message: false
@@ -34,7 +34,7 @@ erp <- erp |>
     mutate(value = erp, metric = "Population 5-14")
 ```
 
-The below graphs demonstrate the estimated change in school aged population from 2001 to 2024. The few key things worth noting are that in 2001 there were a lot of young familes in south Canberra. In 2004, there are still a large number however, there has been a considerable decline. Instead, many more families have moved to the newer Canberra suburbs such as greater Gungahlin and Coombs/Wright area. Finally, overall there has been an increase of school aged children since 2001.
+The below graphs show the estimated change in school aged population from 2001 to 2024 in the ACT. In 2001 there were a lot of young families in south Canberra. By 2024 the proportion of children in the south of Canberra had declined significantly. Instead, many more families have moved to the newer Canberra suburbs such as greater Gungahlin and the Coombs/Wright area. Following a small reduction in the school aged population in 2008, there has been a significant increase of school aged children since.
 
 ## Population Map
 
@@ -159,7 +159,8 @@ create_population_trend <- function() {
     geom_line(color = "#2166AC", linewidth = 1.2) +
     geom_point(color = "#2166AC", size = 3) +
     scale_x_continuous(breaks = seq(2001, 2024, 3)) +
-    scale_y_continuous(labels = scales::comma_format()) +
+    scale_y_continuous(labels = scales::comma_format(),
+      limits = c(0, NA) ) +
     labs(
       title = "ACT School-Age Population Trend",
       subtitle = "Total population aged 5-14 years",
