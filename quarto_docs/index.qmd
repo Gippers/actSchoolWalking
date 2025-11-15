@@ -1,15 +1,15 @@
 
 # ACT School Walking Analysis
 
-As part of Govhack 2025, the Australian Captial Territory (ACT) set the following challenge:
+As part of Govhack 2025, the Australian Capital Territory (ACT) set the following challenge:
 
-> How can we leverage graph analytics, generative AI and other data approaches to optimise public school transport networks to make it simple to get the next generation of students to school with less hassle?
+> How can we leverage graph analytics, generative AI and other data approaches to optimize public school transport networks to make it simple to get the next generation of students to school with less hassle?
 
-An important and potentially under appreciated aspect of travelling to school is walking. In 2011-12 less than one-quarter (23 per cent) of children aged 5–14 undertook the recommended 60 minutes of physical activity every day ([AIHW](https://www.aihw.gov.au/reports/children-youth/australias-children/contents/health/physical-activity)). Walking to school can and does helps children stay physically active, reduces traffic and helps to reduce our carbon footprint ([NSW Education](https://education.nsw.gov.au/teaching-and-learning/curriculum/road-safety-education/safe-travel/walking)). 
+An important and potentially under appreciated aspect of traveling to school is walking. In 2011-12 less than one-quarter (23 per cent) of children aged 5–14 undertook the recommended 60 minutes of physical activity every day ([AIHW](https://www.aihw.gov.au/reports/children-youth/australias-children/contents/health/physical-activity)). Walking to school can and does helps children stay physically active, reduces traffic and helps to reduce our carbon footprint ([NSW Education](https://education.nsw.gov.au/teaching-and-learning/curriculum/road-safety-education/safe-travel/walking)). 
 
  
 
-A key consideration in children being able to walk to school is the distance that they need to travel. In 2018 in the ACT approximately 40 per cent of children were reported to usually walk or cylce to school ([Healthy Schools ACT](https://www.healthyschoolsact.com.au/our-priorities/physical-activity)). If local communities in the ACT don't have a local primary or high school, then children won't have the same opportunity to walk to school. This is particulary important if as the ACT matures and families start to live in different parts of Canberra, the school system does not adapt to these shifting demands.
+A key consideration in children being able to walk to school is the distance that they need to travel. In 2018 in the ACT approximately 40 per cent of children were reported to usually walk or cycle to school ([Healthy Schools ACT](https://www.healthyschoolsact.com.au/our-priorities/physical-activity)). If local communities in the ACT don't have a local primary or high school, then children won't have the same opportunity to walk to school. This is particularly important if as the ACT matures and families start to live in different parts of Canberra, the school system does not adapt to these shifting demands.
 
 ## Questions
 - How has the geographic distribution of school aged children changed since 2001?
@@ -19,15 +19,15 @@ A key consideration in children being able to walk to school is the distance tha
 ## [Population Changes](population_analysis.html)
 Analysis of how school-aged population has shifted across ACT regions since 2001.
 
-## [Average Walk Time](walk_time.html)
+## [Average Walk Time](walk_time.html) 
 Current walking times to nearest schools and how they've changed over time.
 
-## [Future School Optimisation](optimal_school.html)
-Where new schools should be built to minimize walking distances for students.
+## [Future School Location](optimal_school.html)
+Where should future schools be built to minimize walking distances for students?
 
 ## [Method and Assumptions](method.html)
 Data sources, methodology, and limitations of this analysis.
 
-> Cuation: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.
+> Caution: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.
 
-> Furthermore, all findings and opinions are my own and do not represent the view of any institutions I am associated with.
+> All findings and opinions are my own and do not represent the view of any institutions I am associated with.
