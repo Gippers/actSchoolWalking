@@ -28,3 +28,12 @@ data_large/
 # Ignore walk maps
 data/act_walking_network*data/act_walking_network*.rds
 data/erp_sa2.gpkg
+
+# Quarto render output
+_site/
+*.html
+*.htm
+
+# Quarto cache directories
+*_files/
+*.knit.md

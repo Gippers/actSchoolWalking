@@ -19,10 +19,17 @@ website:
         text: Optimal New School
       - href: method.qmd
         text: Methods & Assumptions
+    right:
+    - icon: github
+      aria-label: GitHub
+      href: https://github.com/Gippers
+    - icon: globe
+      aria-label: Personal Website
+      href: https://thomasmartin.id.au
 
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
     toc: true
     toc-depth: 2
