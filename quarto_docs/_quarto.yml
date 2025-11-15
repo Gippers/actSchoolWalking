@@ -25,11 +25,14 @@ website:
       href: https://github.com/Gippers
     - icon: globe
       aria-label: Personal Website
-      href: https://thomasmartin.id.au
+      href: https://www.thomasmartin.id.au
 
 format:
   html:
-    theme: flatly
+    theme:
+      light: flatly
+      dark: darkly
+    toggle: true
     css: styles.css
     toc: true
     toc-depth: 2

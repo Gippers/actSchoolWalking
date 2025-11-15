@@ -46,7 +46,7 @@
     "href": "index.html#method-and-assumptions",
     "title": "",
     "section": "Method and Assumptions",
-    "text": "Method and Assumptions\nData sources, methodology, and limitations of this analysis.\n\nCuation: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.\n\n\nFurthermore, all findings and opinions are my own and do not represent the view of any institutions I am associated with."
+    "text": "Method and Assumptions\nData sources, methodology, and limitations of this analysis.\n\nCaution: This analysis was conducted by one person in a single weekend, as a proof of concept with limited testing. There are definitely errors that have not yet been picked up.\n\n\nAll findings and opinions are my own and do not represent the view of any institutions I am associated with."
   },
   {
     "objectID": "method.html",
@@ -131,5 +131,12 @@
     "title": "Canberra SA2 — School Aged Estimate Residential Population (5-14) Changes",
     "section": "Population Map",
     "text": "Population Map\n\n\n\n2001\n\n\n\n\n\n\n\n\n\n2024"
+  },
+  {
+    "objectID": "index.html#future-school-location",
+    "href": "index.html#future-school-location",
+    "title": "",
+    "section": "Future School Location",
+    "text": "Future School Location\nWhere should future schools be built to minimize walking distances for students?"
   }
 ]
