@@ -8,11 +8,11 @@ Brief notes about data sources, preprocessing, and caveats.
 ## Data
 - [SA2 Shapefile Geoboundaries](https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs-edition-3/jul2021-jun2026/access-and-downloads/digital-boundary-files) provided me with the data to geocode SA2's.
 - [Schools in ACT](https://www.library.act.gov.au/find/history/frequentlyaskedquestions/Place_Stories/schools?utm_source) Was my initial source for ACT goverment School opening and closing dates. This was important as to do a longitudinal analysis of walk times, I required information about schools that use to be open in 2001. In addition, I supplemented this dataset with [wikipedia article](https://en.wikipedia.org/wiki/List_of_schools_in_the_Australian_Capital_Territory), as the previous dataset hadn't been updated in recent years. I geocoded each school by searching for it in google maps.
-- [2001-2021 ERP Data with ASGS3 boundaries](https://dataexplorer.abs.gov.au/vis?fs[0]=People%2C1%7CPopulation%23POPULATION%23%7CEstimated%20Resident%20Population%23ERP%23&pg=20&fc=Region&bp=true&snb=37&df[ds]=PEOPLE_TOPICS&df[id]=ERP_ASGS2021&df[ag]=ABS&df[vs]=1.0.0&dq=...GCCSA..A&pd=2024%2C&to[TIME_PERIOD]=false&ly[cl]=AGE&ly[rs]=SEX&ly[rw]=ASGS_2021) data set provides the Estimated Residential Population from 2001 to 2024. This is the backbone of my analysis,
-- [Open Street Maps (OSM) Walking Network](https://cran.r-project.org/web/packages/dodgr/vignettes/dodgr.html) The OSM walking network is utilized by the dodgr package to created a graph network that can be used to calculated walking distance and speed.
+- [2001-2021 ERP Data with ASGS3 boundaries](https://dataexplorer.abs.gov.au/vis?fs[0]=People%2C1%7CPopulation%23POPULATION%23%7CEstimated%20Resident%20Population%23ERP%23&pg=20&fc=Region&bp=true&snb=37&df[ds]=PEOPLE_TOPICS&df[id]=ERP_ASGS2021&df[ag]=ABS&df[vs]=1.0.0&dq=...GCCSA..A&pd=2024%2C&to[TIME_PERIOD]=false&ly[cl]=AGE&ly[rs]=SEX&ly[rw]=ASGS_2021) data set provides the Estimated Residential Population from 2001 to 2024. 
+- [Open Street Maps (OSM) Walking Network](https://cran.r-project.org/web/packages/dodgr/vignettes/dodgr.html) The OSM walking network was utilized by the `dodgr` package to create a graph network that can be used to calculate walking distance and speed.
 
 ## Method and Limitations
-- Given computational constraints, walk times per suburb were computed by placing 10 random locations in each sa2, and the walk time to the closest primary or high school was calculated. Then the populations was evenly weighted to each of the random locations and a weighted walk time was estimated for the SA2,
+- Given computational constraints, walk times per suburb were computed by placing 10 random locations in each sa2, and finding the average walk time to the closest primary or high school for all of these locations. Then the populations were evenly weighted to each of the random locations and a weighted walk time was estimated for the SA2.
 - The "Optimal New School Location" was found by randomly sampling 100 locations in the ACT and then calculating the average weighted walk time to a primary and high school's if this new schools was included. 
 
 ## Assumptions
@@ -21,11 +21,11 @@ Given data limitations, many assumptions had to be made. Some of these assumptio
 - Assume that the populations are evenly distributed in each SA2, 
 - Assume that walkways are accessible to all students (which they will not be in reality),
 - All children go to school, doesn't account for home schooling, 
-- Assume that schools have infitine capacity. In reality, schools will have a fixed numer  of students that they can teach. Future analyis could account for this, and it may result in resonably different findings particularily about where the optimal school placement is. 
+- Assume that schools have infinite capacity. In reality, schools will have a fixed upper limit on the number of students that they can teach. Future analysis could account for this, and it may result in reasonably different findings particularly about where the optimal school placement is, and
 - Some outer suburbs in Canberra were removed because of their small populations.
 
 ## Further Analysis
 - Use forecasting populations to plan new school locations and analyse future walk times,
 - Take into account private schools and school capacities,
-- Weight the random locaitons by residential areas and increase the size of the random sampling,
-- Look at how best to add multiple schools or whether some schools could be moved to better service the community.
+- Weight the random locations by residential areas and increase the size of the random sampling, and
+- Explore how to add multiple "optimal" schools or whether some schools could be moved to better service the community.
