@@ -17,6 +17,7 @@ Brief notes about data sources, preprocessing, and caveats.
 
 ## Assumptions
 Given data limitations, many assumptions had to be made. Some of these assumptions are contained below:
+
 - Assume that 5-9 yo are representative of primary school aged children and 10-14 for high school aged children,
 - Assume that the populations are evenly distributed in each SA2, 
 - Assume that walkways are accessible to all students (which they will not be in reality),
