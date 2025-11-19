@@ -18,7 +18,7 @@ website:
       - href: optimal_school.qmd
         text: Optimal New School
       - href: method.qmd
-        text: Methods & Assumptions
+        text: Method & Assumptions
     right:
     - icon: github
       aria-label: GitHub

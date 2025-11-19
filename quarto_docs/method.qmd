@@ -1,5 +1,5 @@
 ---
-title: "Methods"
+title: "Method and Assumptions"
 ---
 
 Brief notes about data sources, preprocessing, and caveats.

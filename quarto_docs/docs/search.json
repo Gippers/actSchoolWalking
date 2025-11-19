@@ -86,35 +86,35 @@
   {
     "objectID": "method.html",
     "href": "method.html",
-    "title": "Methods",
+    "title": "Method and Assumptions",
     "section": "",
     "text": "Brief notes about data sources, preprocessing, and caveats."
   },
   {
     "objectID": "method.html#data",
     "href": "method.html#data",
-    "title": "Methods",
+    "title": "Method and Assumptions",
     "section": "Data",
     "text": "Data\n\nSA2 Shapefile Geoboundaries provided me with the data to geocode SA2’s.\nSchools in ACT Was my initial source for ACT goverment School opening and closing dates. This was important as to do a longitudinal analysis of walk times, I required information about schools that use to be open in 2001. In addition, I supplemented this dataset with wikipedia article, as the previous dataset hadn’t been updated in recent years. I geocoded each school by searching for it in google maps.\n2001-2021 ERP Data with ASGS3 boundaries data set provides the Estimated Residential Population from 2001 to 2024.\nOpen Street Maps (OSM) Walking Network The OSM walking network was utilized by the dodgr package to create a graph network that can be used to calculate walking distance and speed."
   },
   {
     "objectID": "method.html#method-and-limitations",
     "href": "method.html#method-and-limitations",
-    "title": "Methods",
+    "title": "Method and Assumptions",
     "section": "Method and Limitations",
     "text": "Method and Limitations\n\nGiven computational constraints, walk times per suburb were computed by placing 10 random locations in each sa2, and finding the average walk time to the closest primary or high school for all of these locations. Then the populations were evenly weighted to each of the random locations and a weighted walk time was estimated for the SA2.\nThe “Optimal New School Location” was found by randomly sampling 100 locations in the ACT and then calculating the average weighted walk time to a primary and high school’s if this new schools was included."
   },
   {
     "objectID": "method.html#assumptions",
     "href": "method.html#assumptions",
-    "title": "Methods",
+    "title": "Method and Assumptions",
     "section": "Assumptions",
     "text": "Assumptions\nGiven data limitations, many assumptions had to be made. Some of these assumptions are contained below:\n\nAssume that 5-9 yo are representative of primary school aged children and 10-14 for high school aged children,\nAssume that the populations are evenly distributed in each SA2,\nAssume that walkways are accessible to all students (which they will not be in reality),\nAll children go to school, doesn’t account for home schooling,\nAssume that schools have infinite capacity. In reality, schools will have a fixed upper limit on the number of students that they can teach. Future analysis could account for this, and it may result in reasonably different findings particularly about where the optimal school placement is, and\nSome outer suburbs in Canberra were removed because of their small populations."
   },
   {
     "objectID": "method.html#further-analysis",
     "href": "method.html#further-analysis",
-    "title": "Methods",
+    "title": "Method and Assumptions",
     "section": "Further Analysis",
     "text": "Further Analysis\n\nUse forecasting populations to plan new school locations and analyse future walk times,\nTake into account private schools and school capacities,\nWeight the random locations by residential areas and increase the size of the random sampling, and\nExplore how to add multiple “optimal” schools or whether some schools could be moved to better service the community."
   },
