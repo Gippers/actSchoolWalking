@@ -2,9 +2,9 @@
 title: "Optimal New School Locations in 2024"
 ---
 
-The purpose of this page is to suggest locations for a future school in the ACT that would have the largest impact on reducing walking times for students. One suggestion is calculated for primary and high school, but a resonable amount of decent options exist. This tool could be used by the department for future planning purposes.
+Given the walking time analysis, we can estimate the location of a future school in the ACT that would have the largest impact on reducing walking times for students. One suggested location is estimated for primary and high school, but a number of decent options exist. This tool could be used by the department for future planning purposes.
 
-The "Optimal New School Location" was found by randomly sampling 100 locations in the ACT and then calculating the average weighted walk time to a primary and high school's if this new schools was included. 
+The "Optimal New School Location" was found by randomly sampling 100 locations in the ACT and then calculating the average weighted walk time to a primary and high school's if this new school was included. The location resulted in the largest decrease was selected as the "optimal new school". Other more efficient algorithms for finding this location may exist however, given the limited available time in the competition this crude method was employed.
 
 ```{r setup}
 #| echo: false
@@ -109,22 +109,12 @@ create_school_location_map <- function(optimal_data, school_type, rank = 1)
 
 # New Primary School Location
 
-One of the best new primary school locations was estimated to be in North West Taylor. Worth noting that the pin is indicative of the area, not the exact location to place the school. Realistically, primary schools appear quite nicely distributed which results in only a small differences from this potential new school.
+One of the best new primary school locations was estimated to be in North West Taylor. Worth noting that the pin is indicative of the area, not the exact location to place the school. Realistically, primary schools appear to be fairly evenly distributed. As a result, only a small improvement can be found.
 
 
 ::: {.columns}
 
-::: {.column width="60%"}
-
-```{r}
-#| echo: false
-create_school_location_map(optimal_primary, "Primary", rank = 2)
-
-```
-
-:::
-
-::: {.column width="40%"}
+::: {.column width="50%"}
 
 ```{r}
 #| echo: false
@@ -141,6 +131,9 @@ create_kpi_callout(
   color = "#dc2626"  # Red for current state
 )
 ```
+:::
+
+::: {.column width="50%"}
 
 ```{r}
 #| echo: false
@@ -158,23 +151,20 @@ create_kpi_callout(
 
 ::: 
 
+```{r}
+#| echo: false
+create_school_location_map(optimal_primary, "Primary", rank = 2)
+
+```
+
+
 # New High School Location
-The best new high school location was estimated to be at the confluence of Wright, Coombs, Duffy and Holder. This makes a lot of sense, as this newly developed area in Canberra has attracted many young families. This is likely a more interesting finding that the primary school location, as high schools are fewer and more sparsely distributed.
+The best new high school location was estimated to be at the confluence of Wright, Coombs, Duffy and Holder. This makes a lot of sense, as this newly developed area in Canberra has attracted many young families. This is likely a more interesting finding that the primary school location, as high schools are fewer and more unevenly distributed.
 
 
 ::: {.columns}
 
-::: {.column width="60%"}
-
-```{r}
-#| echo: false
-create_school_location_map(optimal_high, "High")
-
-```
-
-:::
-
-::: {.column width="40%"}
+::: {.column width="50%"}
 
 ```{r}
 #| echo: false
@@ -192,6 +182,12 @@ create_kpi_callout(
 )
 ```
 
+
+:::
+
+::: {.column width="50%"}
+
+
 ```{r}
 #| echo: false
 # Improved walk time KPI
@@ -207,3 +203,9 @@ create_kpi_callout(
 :::
 
 ::: 
+
+```{r}
+#| echo: false
+create_school_location_map(optimal_high, "High")
+
+```

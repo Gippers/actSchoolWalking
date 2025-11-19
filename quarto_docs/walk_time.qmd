@@ -2,8 +2,6 @@
 title: "Average Walk Time Analysis"
 ---
 
-Analysis of walking times to nearest schools across the ACT.
-
 ```{r setup}
 #| echo: false
 #| message: false
@@ -51,6 +49,8 @@ high_2024_avg <- round(sum(high_2024$mean_walk_time_min *
 ```
 
 Walk times were computed by placing 10 random locations in each sa2, and then calculating the average walk time to the closest primary or high school. Then the populations was evenly weighted to each of the random locations in the SA2 and a weighted average walk time was estimated. 
+
+A key finding over time for both the high school and primary school walking distances is that the new suburbs tend to have a significantly longer average walking time to their nearest school. This appears to have resulted on average in an increase in the walking distance to school.
 
 # Primary Schools
 
